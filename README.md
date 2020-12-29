@@ -5,6 +5,13 @@
 -   o salvarlo come html
 -   o cercare un tool online
 
+# Da fare
+
+-   versione mobile
+-   altre pagine
+-   dominio
+-   google analytics
+
 # Copyright
 
 Copyright 2021 Andrea Pendezzini and puntonim (https://github.com/puntonim). No License.
