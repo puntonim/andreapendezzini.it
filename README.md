@@ -12,7 +12,7 @@ Poi lancia:
 $ cd scripts
 $ pipenv shell
 $ pipenv install --dev
-$ python parse_index.py
+$ python parse.py
 ```
 E verranno creati i files in docs.
 Pronti per essere pushati.
@@ -20,7 +20,6 @@ Pronti per essere pushati.
 
 # Da fare
 
--   altre pagine
 -   dominio
 -   google analytics
 -   alt for images

@@ -141,7 +141,9 @@ class ParseIndexMobile(ParseIndexDesktop):
         self.DOTS_TO_ROOT = ".."
 
     def replace_head(self):
-        raw_content = utils.get_raw_head(title="Home", dots_to_root=self.DOTS_TO_ROOT)
+        raw_content = utils.get_raw_head(
+            title=self.TITLE, dots_to_root=self.DOTS_TO_ROOT
+        )
         raw_content += f"""
             <link href="{self.DOTS_TO_ROOT}/assets/css/{self.KEYWORD}/{self.KEYWORD}-mobile.css" rel="stylesheet"/>
             <link href="{self.DOTS_TO_ROOT}/assets/css/index/index-mobile-nimiq.css" rel="stylesheet"/>
@@ -196,16 +198,16 @@ class ParseIndexMobile(ParseIndexDesktop):
         self.remove_ads_bar()
         self.replace_copyright()
         self.add_mobile_menu()
-        # self.fix_links_in_menu()
         self.fix_internal_links_in_menu()
         self.replace_remote_images_with_local()
         self.add_mobile_redirection()
         self.save_html()
 
 
-if __name__ == "__main__":
-    parser_desktop = ParseIndexDesktop()
-    parser_desktop.parse()
+def main():
+    ParseIndexDesktop().parse()
+    ParseIndexMobile().parse()
 
-    parser_mobile = ParseIndexMobile()
-    parser_mobile.parse()
+
+if __name__ == "__main__":
+    main()
