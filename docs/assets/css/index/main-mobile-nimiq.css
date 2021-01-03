@@ -1,0 +1,24 @@
+html {
+    scroll-behavior: smooth;
+}
+
+div#comp-j6htcuyf-pinned-layer,
+div#comp-j6htgi84-pinned-layer,
+header#SITE_HEADER {
+    margin-top: 0 !important;
+}
+
+div#SITE_HEADER-placeholder {
+    height: 0;
+    display: none;
+}
+
+div.mobile-menu-container {
+    transition: opacity .2s;
+    opacity: 0 !important;
+}
+
+div.mobile-menu-container.active {
+    transition: opacity .2s;
+    opacity: 1 !important;
+}

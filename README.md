@@ -8,9 +8,18 @@
 # Da fare
 
 -   versione mobile
+    - add js file to activate mobile menu
+    - navigate when click on menu
+    - move the mobile to /m/index.html
+    - add a js that redirects to /m/index.html when on mobile (mobile detected or res < x)
+-   add title etc (better head)
+-   replace all "wix" with "xxx"
+-   alt for images
+-   download fonts?
 -   altre pagine
 -   dominio
 -   google analytics
+
 
 # Copyright
 
