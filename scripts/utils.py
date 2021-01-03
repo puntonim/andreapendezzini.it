@@ -117,9 +117,22 @@ def _replace_string_in_css(css_file_path, old_string, new_string):
     write_file(css_file_path, all_css)
 
 
-def replace_href_in_data_anchor(data_anchor, href, soup):
+def replace_href_in_a_data_anchor(data_anchor, href, soup):
     el = soup.find("a", {"data-anchor": data_anchor})
     el["href"] = href
+    return soup
+
+
+def replace_href_in_li_a(li_id, href, soup):
+    el = soup.find("li", {"id": li_id})
+    a = el.find("a")
+    a["href"] = href
+    return soup
+
+
+def replace_href_in_a(a_id, href, soup):
+    a = soup.find("a", {"id": a_id})
+    a["href"] = href
     return soup
 
 
