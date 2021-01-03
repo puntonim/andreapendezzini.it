@@ -11,6 +11,35 @@ DOCS_DIR = Path().resolve().parent / "docs"
 MOBILE_MENU = HTML_SOURCE_DIR / "mobile-menu.html"
 
 
+def get_raw_head(title=None, description=None, dots_to_root="."):
+    if title is None:
+        title = ""
+    else:
+        title += " | "
+    if description is None:
+        description = "Psicoanalista di formazione junghiana, socio dell'Istituto di Milano e dell'Italia Settentrionale del Centro Italiano di Psicologia Analitica (CIPA) . Riceve privatamente in studio a Milano e a Bergamo , per analisi individuali, percorsi psicoterapeutici e supporto psicologico. Lavora con adolescenti, giovani e adulti."
+
+    raw_head = f"""
+      <meta charset="utf-8">
+      <title>{title}dott. Andrea Pendezzini</title>
+      <meta name="description" content="{description}">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      <meta property="og:title" content="{title}dott. Andrea Pendezzini">
+      <meta property="og:description" content="{description}">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="andreapendezzini.it">
+      <meta property="og:image" content="https://andreapendezzini.it/assets/img/index/IMG-5622.webp">
+    
+      <link rel="manifest" href="site.webmanifest">
+      <link rel="icon" href="{dots_to_root}/assets/img/favicon/favicon.ico">
+      <link rel="apple-touch-icon" href="{dots_to_root}/assets/img/favicon/apple-touch-icon.png">
+    
+      <meta name="theme-color" content="#d5e1df">
+    """
+    return raw_head
+
+
 def read_file(path):
     with open(path) as fin:
         return fin.read()

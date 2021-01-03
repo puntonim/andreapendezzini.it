@@ -27,7 +27,8 @@ class ParseIndexDesktop:
         self.soup = utils.move_out_css(self.MAIN_CSS, self.soup)
 
     def replace_head(self):
-        raw_content = f"""
+        raw_content = utils.get_raw_head(title="Home", dots_to_root=self.DOTS_TO_ROOT)
+        raw_content += f"""
             <link href="{self.DOTS_TO_ROOT}/assets/css/index/main-desktop.css" rel="stylesheet"/>
             <link href="{self.DOTS_TO_ROOT}/assets/css/index/main-desktop-nimiq.css" rel="stylesheet"/>
         """
@@ -95,8 +96,16 @@ class ParseIndexMobile(ParseIndexDesktop):
     DOTS_TO_ROOT = ".."
 
     def replace_head(self):
-        raw_content = f"""
-            <meta content="width=320, user-scalable=yes" id="wixMobileViewport" name="viewport"/>
+        raw_content = utils.get_raw_head(title="Home", dots_to_root=self.DOTS_TO_ROOT)
+        raw_content += f"""
+            <link href="{self.DOTS_TO_ROOT}/assets/css/index/main-desktop.css" rel="stylesheet"/>
+            <link href="{self.DOTS_TO_ROOT}/assets/css/index/main-desktop-nimiq.css" rel="stylesheet"/>
+        """
+        self.soup = utils.replace_head(raw_content, self.soup)
+
+    def replace_head(self):
+        raw_content = utils.get_raw_head(title="Home", dots_to_root=self.DOTS_TO_ROOT)
+        raw_content += f"""
             <link href="{self.DOTS_TO_ROOT}/assets/css/index/main-mobile.css" rel="stylesheet"/>
             <link href="{self.DOTS_TO_ROOT}/assets/css/index/main-mobile-nimiq.css" rel="stylesheet"/>
             
@@ -108,6 +117,14 @@ class ParseIndexMobile(ParseIndexDesktop):
             <script type='text/javascript' src='{self.DOTS_TO_ROOT}/assets/js/main.js'></script>
         """
         self.soup = utils.replace_head(raw_content, self.soup)
+
+    def fix_viewport(self):
+        head = self.soup.find("head")
+        head.find("meta", {"name": "viewport"}).decompose()
+        raw_content = """
+            <meta content="width=320, user-scalable=yes" id="wixMobileViewport" name="viewport"/>
+        """
+        head.append(BeautifulSoup(raw_content, "html.parser"))
 
     def add_mobile_menu(self):
         site_header_wrapper = self.soup.find("header", {"id": "SITE_HEADER_WRAPPER"})
@@ -138,6 +155,7 @@ class ParseIndexMobile(ParseIndexDesktop):
         self.remove_all_scripts()
         self.move_out_css()
         self.replace_head()
+        self.fix_viewport()
         self.remove_ads_bar()
         self.replace_copyright()
         self.add_mobile_menu()
