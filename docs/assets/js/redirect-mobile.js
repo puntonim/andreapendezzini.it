@@ -1,6 +1,3 @@
-console.log("REDIRECT")
-
-
 const isMobile = function() {
     // Adapted from: http://detectmobilebrowsers.com/
     const a = navigator.userAgent || navigator.vendor || window.opera

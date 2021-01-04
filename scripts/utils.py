@@ -31,7 +31,7 @@ def get_raw_head(title=None, description=None, dots_to_root="."):
       <meta property="og:url" content="andreapendezzini.it">
       <meta property="og:image" content="https://andreapendezzini.it/assets/img/index/IMG-5622.webp">
     
-      <link rel="manifest" href="site.webmanifest">
+      <link rel="manifest" href="{dots_to_root}/site.webmanifest">
       <link rel="icon" href="{dots_to_root}/assets/img/favicon/favicon.ico">
       <link rel="apple-touch-icon" href="{dots_to_root}/assets/img/favicon/apple-touch-icon.png">
     
