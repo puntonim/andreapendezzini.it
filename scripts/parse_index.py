@@ -39,7 +39,7 @@ class ParseIndexDesktop:
         )
         raw_content += f"""
             <link href="{self.DOTS_TO_ROOT}/assets/css/{self.KEYWORD}/{self.KEYWORD}-desktop.css" rel="stylesheet"/>
-            <link href="{self.DOTS_TO_ROOT}/assets/css/index/index-desktop-nimiq.css" rel="stylesheet"/>
+            <link href="{self.DOTS_TO_ROOT}/assets/css/desktop-nimiq.css" rel="stylesheet"/>
         """
         self.soup = utils.replace_head(raw_content, self.soup)
 
@@ -146,7 +146,7 @@ class ParseIndexMobile(ParseIndexDesktop):
         )
         raw_content += f"""
             <link href="{self.DOTS_TO_ROOT}/assets/css/{self.KEYWORD}/{self.KEYWORD}-mobile.css" rel="stylesheet"/>
-            <link href="{self.DOTS_TO_ROOT}/assets/css/index/index-mobile-nimiq.css" rel="stylesheet"/>
+            <link href="{self.DOTS_TO_ROOT}/assets/css/mobile-nimiq.css" rel="stylesheet"/>
             
             <script
                 src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
