@@ -17,30 +17,72 @@ const hideMobileMenuOnLinkClick = function() {
 }
 
 const enableScrollOnInternalLinksInMenu = function() {
+    // #chi-sono
     $("a#menu-link-chi-sono").click(function() {
-        if (!$("#chi-sono").length) return
+        if (!$("#comp-khi93rum").length) return
         $('html, body').animate({
-            scrollTop: $("#chi-sono").offset().top - 60
+            scrollTop: $("#comp-khi93rum").offset().top - 60
         });
     })
 
+    // #contatti
     $("a#menu-link-contatti").click(function() {
-        if (!$("#contatti").length) return
+        if (!$("#comp-j6w6mgyg").length) return
         $('html, body').animate({
-            scrollTop: $("#contatti").offset().top - 60
+            scrollTop: $("#comp-j6w6mgyg").offset().top - 60
         });
     })
 
+    // #ambiti-intervento
     $("a#menu-link-ambiti-intervento").click(function() {
-        if (!$("#ambiti-intervento").length) return
+        if (!$("#comp-j6w85rn2").length) return
         $('html, body').animate({
-            scrollTop: $("#ambiti-intervento").offset().top - 50
+            scrollTop: $("#comp-j6w85rn2").offset().top - 50
         });
     })
 }
+
+const scrollOnPageLoadIfHashInLocation = function() {
+    // #chi-sono
+    setTimeout(function () {
+        if (window.location.href.endsWith("#chi-sono")) {
+            $('html, body').animate({
+                // scrollTop: $("#comp-khi93rum").offset().top - 90
+                scrollTop: $("#comp-khi93rum").offset().top - 60
+            });
+        }
+    }, 500);
+
+    // #contatti
+    setTimeout(function () {
+        if (window.location.href.endsWith("#contatti")) {
+            $('html, body').animate({
+                // scrollTop: $("#comp-j6w6mgyg").offset().top - 140
+                scrollTop: $("#comp-j6w6mgyg").offset().top - 60
+            });
+        }
+    }, 500);
+
+    // #ambiti-intervento
+    setTimeout(function () {
+        if (window.location.href.endsWith("#ambiti-intervento")) {
+            $('html, body').animate({
+                // scrollTop: $("#comp-j6w85rn2").offset().top - 125
+                scrollTop: $("#comp-j6w85rn2").offset().top - 50
+            });
+        }
+    }, 500);
+}
+
+const fixHeight = function() {
+    $('section#comp-j6w6mgxz').parent().css("min-height", "auto");
+}
+
 
 $(document).ready(function() {
     showMobileMenuOnSandwichClick()
     hideMobileMenuOnLinkClick()
     enableScrollOnInternalLinksInMenu()
+    scrollOnPageLoadIfHashInLocation()
+    fixHeight()
 });

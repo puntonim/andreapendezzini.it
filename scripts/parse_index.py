@@ -86,14 +86,14 @@ class ParseIndexDesktop:
     def fix_internal_links_in_menu(self):
         # Menu bar: Chi sono.
         self.soup = utils.replace_href_in_li_a("comp-j6htgi841", "#chi-sono", self.soup)
-        self.soup = utils.replace_id(
-            "comp-j6w6mgxz", "chi-sono", self.soup, self.MAIN_CSS
-        )
+        # self.soup = utils.replace_id(
+        #     "comp-j6w6mgxz", "chi-sono", self.soup, self.MAIN_CSS
+        # )
         # Menu bar: Contatti.
         self.soup = utils.replace_href_in_li_a("comp-j6htgi846", "#contatti", self.soup)
-        self.soup = utils.replace_id(
-            "comp-j6w6mgyg", "contatti", self.soup, self.MAIN_CSS
-        )
+        # self.soup = utils.replace_id(
+        #     "comp-j6w6mgyg", "contatti", self.soup, self.MAIN_CSS
+        # )
 
     def replace_remote_images_with_local(self):
         self.soup = utils.replace_remote_images_with_local(
@@ -169,17 +169,17 @@ class ParseIndexMobile(ParseIndexDesktop):
 
     def fix_internal_links_in_menu(self):
         # Menu bar: Chi sono.
-        self.soup = utils.replace_id(
-            "comp-khi93rum", "chi-sono", self.soup, self.MAIN_CSS
-        )
+        # self.soup = utils.replace_id(
+        #     "comp-khi93rum", "chi-sono", self.soup, self.MAIN_CSS
+        # )
         self.soup = utils.replace_href_in_a(
             "menu-link-chi-sono", "#chi-sono", self.soup
         )
 
         # Menu bar: Contatti.
-        self.soup = utils.replace_id(
-            "comp-j6w6mgyg", "contatti", self.soup, self.MAIN_CSS
-        )
+        # self.soup = utils.replace_id(
+        #     "comp-j6w6mgyg", "contatti", self.soup, self.MAIN_CSS
+        # )
         self.soup = utils.replace_href_in_a(
             "menu-link-contatti", "#contatti", self.soup
         )

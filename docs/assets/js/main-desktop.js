@@ -1,26 +1,62 @@
 const enableScrollOnInternalLinksInMenu = function() {
-    $("li#comp-khi91e6o2 a").click(function() {
-        if (!$("#chi-sono").length) return
+    // #chi-sono
+    $("li#comp-j6htgi841 a").click(function() {
+        if (!$("#comp-j6w6mgxz").length) return
         $('html, body').animate({
-            scrollTop: $("#chi-sono").offset().top - 60
+            scrollTop: $("#comp-j6w6mgxz").offset().top - 40
         });
     })
 
+    // #contatti
     $("li#comp-j6htgi846 a").click(function() {
-        if (!$("#contatti").length) return
+        if (!$("#comp-j6w6mgyg").length) return
         $('html, body').animate({
-            scrollTop: $("#contatti").offset().top - 60
+            scrollTop: $("#comp-j6w6mgyg").offset().top - 60
         });
     })
 
+    // #ambiti-intervento
     $("li#comp-j6htgi843 a").click(function() {
-        if (!$("#ambiti-intervento").length) return
+        if (!$("#comp-j6w85rn2").length) return
         $('html, body').animate({
-            scrollTop: $("#ambiti-intervento").offset().top - 50
+            scrollTop: $("#comp-j6w85rn2").offset().top - 50
         });
     })
 }
 
+const scrollOnPageLoadIfHashInLocation = function() {
+    // #chi-sono
+    setTimeout(function () {
+        if (window.location.href.endsWith("#chi-sono")) {
+            $('html, body').animate({
+                // scrollTop: $("#comp-j6w6mgxz").offset().top - 45
+                scrollTop: $("#comp-j6w6mgxz").offset().top - 40
+            });
+        }
+    }, 500);
+
+    // #contatti
+    setTimeout(function () {
+        if (window.location.href.endsWith("#contatti")) {
+            $('html, body').animate({
+                // scrollTop: $("#comp-j6w6mgyg").offset().top - 90
+                scrollTop: $("#comp-j6w6mgyg").offset().top - 60
+            });
+        }
+    }, 500);
+
+    // #ambiti-intervento
+    setTimeout(function () {
+        if (window.location.href.endsWith("#ambiti-intervento")) {
+            $('html, body').animate({
+                // scrollTop: $("#comp-j6w85rn2").offset().top - 90
+                scrollTop: $("#comp-j6w85rn2").offset().top - 50
+            });
+        }
+    }, 500);
+}
+
 $(document).ready(function() {
     enableScrollOnInternalLinksInMenu()
+    scrollOnPageLoadIfHashInLocation()
 });
