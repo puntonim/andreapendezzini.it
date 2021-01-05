@@ -36,6 +36,12 @@ def get_raw_head(title=None, description=None, dots_to_root="."):
       <link rel="apple-touch-icon" href="{dots_to_root}/assets/img/favicon/apple-touch-icon.png">
     
       <meta name="theme-color" content="#d5e1df">
+      
+      <script
+          src="https://code.jquery.com/jquery-3.5.1.min.js"
+          integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+          crossorigin="anonymous">
+      </script>    
     """
     return raw_head
 
