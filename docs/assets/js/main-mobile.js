@@ -21,7 +21,7 @@ const enableScrollOnInternalLinksInMenu = function() {
     $("a#menu-link-chi-sono").click(function() {
         if (!$("#comp-khi93rum").length) return
         $('html, body').animate({
-            scrollTop: $("#comp-khi93rum").offset().top - 60
+            scrollTop: $("#comp-khi93rum").offset().top
         });
     })
 
@@ -47,8 +47,7 @@ const scrollOnPageLoadIfHashInLocation = function() {
     setTimeout(function () {
         if (window.location.href.endsWith("#chi-sono")) {
             $('html, body').animate({
-                // scrollTop: $("#comp-khi93rum").offset().top - 90
-                scrollTop: $("#comp-khi93rum").offset().top - 60
+                scrollTop: $("#comp-khi93rum").offset().top
             });
         }
     }, 500);
@@ -57,7 +56,6 @@ const scrollOnPageLoadIfHashInLocation = function() {
     setTimeout(function () {
         if (window.location.href.endsWith("#contatti")) {
             $('html, body').animate({
-                // scrollTop: $("#comp-j6w6mgyg").offset().top - 140
                 scrollTop: $("#comp-j6w6mgyg").offset().top - 60
             });
         }
@@ -67,7 +65,6 @@ const scrollOnPageLoadIfHashInLocation = function() {
     setTimeout(function () {
         if (window.location.href.endsWith("#ambiti-intervento")) {
             $('html, body').animate({
-                // scrollTop: $("#comp-j6w85rn2").offset().top - 125
                 scrollTop: $("#comp-j6w85rn2").offset().top - 50
             });
         }

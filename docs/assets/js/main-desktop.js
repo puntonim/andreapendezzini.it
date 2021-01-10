@@ -3,7 +3,7 @@ const enableScrollOnInternalLinksInMenu = function() {
     $("li#comp-j6htgi841 a").click(function() {
         if (!$("#comp-j6w6mgxz").length) return
         $('html, body').animate({
-            scrollTop: $("#comp-j6w6mgxz").offset().top - 40
+            scrollTop: $("#comp-j6w6mgxz").offset().top
         });
     })
 
@@ -29,8 +29,7 @@ const scrollOnPageLoadIfHashInLocation = function() {
     setTimeout(function () {
         if (window.location.href.endsWith("#chi-sono")) {
             $('html, body').animate({
-                // scrollTop: $("#comp-j6w6mgxz").offset().top - 45
-                scrollTop: $("#comp-j6w6mgxz").offset().top - 40
+                scrollTop: $("#comp-j6w6mgxz").offset().top
             });
         }
     }, 500);
@@ -39,7 +38,6 @@ const scrollOnPageLoadIfHashInLocation = function() {
     setTimeout(function () {
         if (window.location.href.endsWith("#contatti")) {
             $('html, body').animate({
-                // scrollTop: $("#comp-j6w6mgyg").offset().top - 90
                 scrollTop: $("#comp-j6w6mgyg").offset().top - 60
             });
         }
@@ -49,7 +47,6 @@ const scrollOnPageLoadIfHashInLocation = function() {
     setTimeout(function () {
         if (window.location.href.endsWith("#ambiti-intervento")) {
             $('html, body').animate({
-                // scrollTop: $("#comp-j6w85rn2").offset().top - 90
                 scrollTop: $("#comp-j6w85rn2").offset().top - 50
             });
         }
