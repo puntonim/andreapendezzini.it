@@ -29,7 +29,7 @@ const enableScrollOnInternalLinksInMenu = function() {
     $("a#menu-link-contatti").click(function() {
         if (!$("#comp-j6w6mgyg").length) return
         $('html, body').animate({
-            scrollTop: $("#comp-j6w6mgyg").offset().top - 60
+            scrollTop: $("#comp-j6w6mgyg").offset().top - 50
         });
     })
 
@@ -56,7 +56,7 @@ const scrollOnPageLoadIfHashInLocation = function() {
     setTimeout(function () {
         if (window.location.href.endsWith("#contatti")) {
             $('html, body').animate({
-                scrollTop: $("#comp-j6w6mgyg").offset().top - 60
+                scrollTop: $("#comp-j6w6mgyg").offset().top - 50
             });
         }
     }, 500);
