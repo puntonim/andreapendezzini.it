@@ -1,3 +1,18 @@
+# Urls
+
+https://andreapendezzini.it
+https://andreapende.wixsite.com/sito 
+https://puntonim.github.io/andreapendezzini.it/
+
+DNS Record
+```
+@ 1800 IN A 185.199.108.153
+@ 1800 IN A 185.199.109.153
+@ 1800 IN A 185.199.110.153
+@ 1800 IN A 185.199.111.153
+www 1800 IN CNAME andreapendezzini.it.
+```
+
 # Come fare
 
 -   creare il sito su Wix
@@ -20,8 +35,7 @@ Pronti per essere pushati.
 
 # Da fare
 
--   dominio
--   google analytics
+-   google analytics?
 -   alt for images
 -   download fonts?
 

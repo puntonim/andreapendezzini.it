@@ -36,3 +36,9 @@ div#SITE_HEADER-placeholder {
         width: 100% !important;
     }
 }
+
+div#SITE_PAGES div#comp-j6w6mgy9 a {
+    text-decoration: underline;
+    display:inline-block;
+}
+

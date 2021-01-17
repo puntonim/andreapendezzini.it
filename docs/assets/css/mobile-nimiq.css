@@ -44,3 +44,9 @@ div#h4hzq {
 div#comp-khjfzwu6 {
     margin-bottom: 3em;
 }
+
+div#SITE_PAGES div#comp-j6w6mgy9 a {
+    text-decoration: underline;
+    display: inline-block;
+    /*display: block;*/
+}
