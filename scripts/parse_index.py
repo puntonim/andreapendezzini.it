@@ -100,6 +100,11 @@ class ParseIndexDesktop:
             self.IMG_DIR, self.soup, dots_to_root=self.DOTS_TO_ROOT
         )
 
+    def replace_profile_image(self):
+        img = self.soup.find("div", {"id": "comp-khiazyvr"}).find("img")
+        img.attrs["src"] = self.DOTS_TO_ROOT + "/assets/img/index/andrea.jpg"
+        img.attrs["alt"] = "dott. Andrea Pendezzini"
+
     def add_mobile_redirection(self):
         head = self.soup.find("head")
         raw_content = f"""
@@ -122,6 +127,7 @@ class ParseIndexDesktop:
         self.fix_links_in_menu()
         self.fix_internal_links_in_menu()
         self.replace_remote_images_with_local()
+        self.replace_profile_image()
         self.add_mobile_redirection()
         self.save_html()
 
@@ -197,6 +203,7 @@ class ParseIndexMobile(ParseIndexDesktop):
         self.add_mobile_menu()
         self.fix_internal_links_in_menu()
         self.replace_remote_images_with_local()
+        self.replace_profile_image()
         self.add_mobile_redirection()
         self.save_html()
 
